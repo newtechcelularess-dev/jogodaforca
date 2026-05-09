@@ -1,0 +1,330 @@
+#jogo {
+    position: relative;
+    height: 100vh;
+    padding-top: 10px;
+    background-color: aqua;
+}
+
+h1 {
+    text-align: center;
+    font-size: 50px;
+    font-style: italic;
+    font-family: 'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif;
+}
+
+.game {
+    display: flex;
+    position: relative;
+    
+    height: 300px;
+    
+}
+.fundo {
+    width: 100%;
+}
+
+.forca {
+    position: absolute;
+    display: flex;
+    padding-left: 80px;
+    flex: 1;
+    height: 100%;
+    
+}
+
+.display {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    text-align: center;
+    right: 0;
+    position: absolute;
+    height: 100%;
+    width: 600px;
+    flex: 1;
+    
+}
+
+.palavra {
+    position: relative;
+    margin-top: -190px;
+    display: flex;
+    height: 200px;
+    font-size: 100PX;
+    
+}
+
+
+.letra {
+    text-align: center;
+    display: grid;
+    justify-content: center;
+    height: 100%;
+    flex: 1;
+}
+
+.l1 , 
+.l2 , 
+.l3 , 
+.l4 , 
+.l5 , 
+.l6 , 
+.l7 , 
+.l8{
+    height: 80px;
+    display: flex;
+    justify-content: center;
+    padding-bottom: 0px;
+    
+}
+
+.traco1,  
+.traco2,  
+.traco3,  
+.traco4,  
+.traco5,  
+.traco6,  
+.traco7,  
+.traco8 {
+    
+    border-radius: 5px;
+    background-color: white;
+    width: 100px;
+    height: 15px; ;
+}
+
+.cabeca {
+    position: absolute;
+    margin-left: 190px;
+    margin-top: 103px;
+    height: 80px;
+    width: 80px;
+}
+.corpo {
+  position: absolute;
+  height: 70px;
+  width: 15px;
+  background-color: blue;
+  border-radius: 6px;
+  margin-top: 180px;
+  margin-left: 230px;
+}
+.pernaEsq {
+  position: absolute;
+  height: 60px;
+  width: 13px;
+  background-color: red;
+  border-radius: 6px;
+  margin-top: 240px;
+  margin-left: 231px;
+  transform: rotate(35deg); 
+  transform-origin: top; 
+}
+.pernaDir {
+  position: absolute;
+  height: 60px;
+  width: 13px;
+  background-color: red;
+  border-radius: 6px;
+  margin-top: 240px;
+  margin-left: 231px;
+  transform: rotate(-35deg); 
+  transform-origin: top; 
+}
+.bracoEsq {
+  position: absolute;
+  height: 60px;
+  width: 13px;
+  background-color: blue;
+  border-radius: 6px;
+  margin-top: 185px;
+  margin-left: 231px;
+  transform: rotate(35deg); 
+  transform-origin: top; 
+}
+.bracoDir {
+  position: absolute;
+  height: 60px;
+  width: 13px;
+  background-color: blue;
+  border-radius: 6px;
+  margin-top: 185px;
+  margin-left: 231px;
+  transform: rotate(-35deg); 
+  transform-origin: top; 
+}
+
+.botao {
+  position: absolute;
+  margin-top: 100px;
+  margin-left: 400px;
+  
+  width: 90px;
+  height: 90px;
+  border-radius: 50%;
+  
+  
+  border: 2px solid #00f2ff;
+  
+
+  background: radial-gradient(circle, #33a6ff 0%, #0056b3 70%, #003366 100%);
+  
+  
+  color: #fff;
+  font-family: 'Segoe UI', Roboto, sans-serif;
+  font-weight: 900;
+  text-transform: uppercase;
+  font-size: 13px;
+  letter-spacing: 1px;
+  cursor: pointer;
+  
+  
+  box-shadow: 0 0 15px rgba(0, 242, 255, 0.6),      
+              inset 0 0 10px rgba(0, 242, 255, 0.4),
+              inset 0 5px 10px rgba(255, 255, 255, 0.5); 
+
+  transition: all 0.3s ease;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  outline: none;
+}
+
+
+.botao:hover {
+  box-shadow: 0 0 25px rgba(0, 242, 255, 0.9), 
+              inset 0 0 15px rgba(0, 242, 255, 0.6);
+  transform: scale(1.05); 
+}
+
+
+.botao:active {
+  transform: scale(0.95);
+  background: radial-gradient(circle, #0056b3 0%, #003366 100%); 
+}
+
+.erro {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 250px; 
+}
+
+.x-neon {
+  position: relative;
+  width: 200px;
+  height: 200px;
+  animation: pulsar-neon 1.5s infinite ease-in-out;
+}
+
+
+.x-neon::before, .x-neon::after {
+  content: '';
+  position: absolute;
+  top: 50%;
+  left: 0;
+  width: 100%;
+  height: 25px; 
+  background-color: #ff003c; 
+  border-radius: 5px;
+  
+  box-shadow: 0 0 10px #ff003c, 0 0 20px #ff003c, 0 0 20px #ff003c;
+}
+
+.x-neon::before {
+  transform: rotate(45deg);
+}
+
+.x-neon::after {
+  transform: rotate(-45deg);
+}
+
+
+@keyframes pulsar-neon {
+  0%, 100% {
+    opacity: 1;
+    filter: drop-shadow(0 0 5px #ff003c) drop-shadow(0 0 15px #ff003c);
+  }
+  50% {
+    opacity: 0.7;
+    filter: drop-shadow(0 0 20px #ff003c) drop-shadow(0 0 40px #ff003c) contrast(1.5);
+  }
+}
+
+.sucesso {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 250px;
+}
+
+.v-neon {
+  position: relative;
+  width: 200px;
+  height: 200px;
+  animation: pulsar-neon-verde 1.5s infinite ease-in-out;
+}
+
+
+.v-neon::before, .v-neon::after {
+  content: '';
+  position: absolute;
+  background-color: #00ff41; 
+  border-radius: 10px;
+  box-shadow: 0 0 10px #00ff41, 0 0 20px #00ff41;
+}
+
+
+.v-neon::before {
+  width: 15px;
+  height: 100px;
+  left: 40px;
+  bottom: 50px;
+  transform: rotate(-45deg);
+}
+
+
+.v-neon::after {
+  width: 15px;
+  height: 180px;
+  bottom: 38px;
+  transform: rotate(45deg);
+}
+
+
+@keyframes pulsar-neon-verde {
+  0%, 100% {
+    opacity: 1;
+    filter: drop-shadow(0 0 5px #00ff41) drop-shadow(0 0 15px #00ff41);
+  }
+  50% {
+    opacity: 0.7;
+    filter: drop-shadow(0 0 20px #00ff41) drop-shadow(0 0 40px #00ff41) contrast(1.5);
+  }
+}
+/* Estilo base para as mensagens finais */
+.mensagem-final {
+    font-size: 80px;
+    font-weight: bold;
+    text-shadow: 0 0 20px rgba(255, 255, 255, 0.5);
+    animation: pulsar 1.5s infinite alternate;
+    text-align: center;
+}
+
+/* Cor para Vitória (Verde Neon) */
+.vitoria {
+    color: #00ff00;
+    text-shadow: 0 0 15px #00ff00;
+}
+
+/* Cor para Derrota (Vermelho Neon) */
+.derrota {
+    color: #ff0000;
+    text-shadow: 0 0 15px #ff0000;
+}
+
+/* Animação para a mensagem não ficar estática */
+@keyframes pulsar {
+    from { transform: scale(1); }
+    to { transform: scale(1.1); }
+}
